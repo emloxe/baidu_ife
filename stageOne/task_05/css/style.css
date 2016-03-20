@@ -1,0 +1,56 @@
+a, address, b, big, blockquote, body,  cite, code, dd, del, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{margin:0;padding:0}
+
+body{font-family: "微软雅黑"}
+a{text-decoration: none;}
+.main,.article,.mainRight{padding: 20px;}
+/*清除浮动*/
+.group:before,
+.group:after {content: "";display: table;}
+.group:after {clear: both;}
+.group {*zoom: 1;}
+
+
+/*头部样式*/
+.header{height:50px;background-color: #444;min-width: 600px;}
+.header span{margin-left:20px;}
+.header span img{height: 37px;margin-top: 4px;} 
+.header .nav{display: inline-block;float:right;list-style-type: none;font-size: 0;}
+.nav li{display: inline-block;}
+.nav li a{display: block; line-height: 50px;color: #FFF;padding: 0 15px;font-size: 15px;}
+.nav li a:hover{background-color: #888;}
+.nav li a.active{background-color: #888;}
+
+
+/*中部样式*/
+.main{background: #eee;padding: 20px;}
+
+.mainLeft{margin-right: 420px;line-height: 2em;min-width: 600px;}
+.mainLeft .article{background-color: #FFF;margin-bottom: 20px;border: 1px solid #ccc;box-shadow: 1px 1px 2px #bbb}
+.mainLeft .article p{text-indent: 2em}
+#article1 img,#article2 img{width:80%;}
+#article2 ul{list-style-type: none;}
+#article3 div{float: left;margin:10px;border:1px solid #ddd;padding: 10px}
+#article3 div p{font-size: 14px;text-align: center;text-indent: 0;}
+#article3 div img{margin: auto;}
+#article4 ol{list-style-position:inside;}
+#article4 table,#article4 tr,#article4 td,#article4 th{border: 1px solid #ddd;}
+#article4 table{ border-collapse: collapse;width: 80%}
+#article4 table thead{background-color: #666;color: #fff;}
+#article4 table tfoot{background-color: #bbb}
+
+.mainRight{float: right;width: 400px;background-color: #FFF;box-sizing: border-box;border: 1px solid #ccc;box-shadow: 1px 1px 2px #bbb}
+.mainRight div span{display:inline-block;width: 5px;height: 35px;background-color: #ddd;margin-right: 10px;vertical-align:middle}
+.mainRight div p{display: inline-block;vertical-align:middle;font-weight:bold;  }
+.mainRight table{font-size: 13px;margin-top: 20px;}
+.mainRight table tr{height: 35px;} 
+.mainRight tr td:nth-child(1){ width: 105px;text-align: right;padding-right: 10px;}
+.mainRight tr td.vta{vertical-align: top;}
+.mainRight tr td.colorg{color: #aaa}
+.mainRight tr td textarea{width:210px;height: 110px; }
+.mainRight tr td input[type="submit"]{margin-left:17px;margin-top:10px;height:38px;width: 100%;background-color: #3355D0;color:#fff;border-radius: 10px;border: 0;box-shadow: 1px 1px 1px #aaa;font-weight: bold;}
+.mainRight tr td input[type="submit"]:hover{box-shadow: 1px 1px 3px #888}
+
+/*尾部样式*/
+.footer{height:120px;background-color: #333;text-align: center;}
+.footer p{color: #FFF;padding-top: 50px;}
+

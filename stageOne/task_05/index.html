@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>零基础HTML及CSS编码（二）</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div class="header">
+	<span><img src="img/bdlogo.png"></span>
+	<ul class="nav">
+		<li><a href="#">导航连接一</a></li>
+		<li><a href="#">导航连接二</a></li>
+		<li><a href="#">导航连接三</a></li>
+		<li><a href="#" class="active">导航连接四</a></li>
+	</ul>
+</div>
+<div class="main group">
+	<div class="mainRight">
+		<div><span></span><p>这里以后是一个侧栏，这是侧栏的标题</p></div>
+		<form>
+			<table>
+				<tr>
+					<td>请输入邮箱地址</td>
+					<td><input type="text" name="email" placeholder="这是一个文本输入框"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="vta colorg">邮箱地址请按要求格式输入</td>
+				</tr>
+				<tr>
+					<td>请输入密码</td>
+					<td><input type="password" placeholder="*********"></td>
+				</tr>
+				<tr>
+					<td>请重复输入密码</td>
+					<td><input type="password" placeholder="*********"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="vta colorg">密码请为6-16位英文数字</td>
+				</tr>
+				<tr>
+					<td>性别</td>
+					<td>
+						<input type="radio" name="sex" value="male" >男 
+						<input type="radio" name="sex" value="female" />女
+					</td>
+				</tr>
+				<tr>
+					<td>城市</td>
+					<td>
+						<select name="city">
+							<option value="beijing" selected="selected">北京</option>
+							<option value="shanghai">上海</option>
+							<option value="guangzhou">广州</option>
+							<option value="shenzhen">深圳</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>爱好</td>
+					<td>
+						<input type="checkbox" name="sports" value="sports" />运动
+						<input type="checkbox" name="art" value="art" />艺术
+						<input type="checkbox" name="science" value="science" />科学
+					</td>
+				</tr>
+				<tr>
+					<td class="vta">个人描述</td>
+					<td>
+						<textarea placeholder="">这是一个多行输入框，输入您的个人描述
+						</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit" value="确认提交" />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div class="mainLeft">
+		<div class="article" id="article1">
+			<h3>文章一级标题</h3>
+ 			<h4>文章二级标题</h4>	
+			<div><span>文章作者</span> <span>文章发表时间</span></div>
+			<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落， 换行了
+			这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br>
+			这是一个很长很长的段落，这是一个很长很长的段落， <a href="http://ife.baidu.com">这里有一个链接链接到</a>这是一个很长很长的段落，这是一个很长很长的段落， <b>这里有个粗体字</b>这是一个很长很长的段落， 这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。</p> 
+			<img src="img/ab_p1.png">
+			<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落， 这是一个很长很长的段落，换行了<br>
+			这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这里有个粗体字  <b>这里有个粗体字</b>这是一个很长很长的段落，这是一个很长很长的段落， <a href="http://ife.baidu.com">这里有一个链接点击后打开新窗口链接到 </a>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是 一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落. </p>
+		</div>
+		<div class="article" id="article2">
+			<h3>另一篇文章一级标题</h3>
+ 			<h4>文章二级标题</h4>	
+			<div><span>文章作者</span> <span>文章发表时间</span></div>
+			<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落， 换行了
+			这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br>
+			这是一个很长很长的段落，这是一个很长很长的段落， <a href="http://ife.baidu.com">这里有一个链接链接到</a>这是一个很长很长的段落，这是一个很长很长的段落， <b>这里有个粗体字</b>这是一个很长很长的段落， 这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。</p> 
+			<img src="img/ab_p2.png">
+			<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落， 这是一个很长很长的段落，换行了<br>
+			这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这里有个粗体字  <b>这里有个粗体字</b>这是一个很长很长的段落，这是一个很长很长的段落， <a href="http://ife.baidu.com">这里有一个链接点击后打开新窗口链接到 </a>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是 一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落. </p>
+			<ul>
+				<li>列表项目一</li>
+				<li>列表项目二</li>
+				<li>列表项目三</li>
+			</ul>
+		</div>
+		<div class="article group" id="article3">
+			<h3>图片</h3>
+			<div><p>好看的图片</p><img src="img/some.jpg"></div>
+			<div><p>好看的图片</p><img src="img/some.jpg"></div>
+			<div><p>好看的图片</p><img src="img/some.jpg"></div>
+			<div><p>好看的图片</p><img src="img/some.jpg"></div>
+			<div><p>好看的图片</p><img src="img/some.jpg"></div>
+			<div><p>好看的图片</p><img src="img/some.jpg"></div>
+			<div><p>好看的图片</p><img src="img/some.jpg"></div>
+			<div><p>好看的图片</p><img src="img/some.jpg"></div>
+			<div><p>好看的图片</p><img src="img/some.jpg"></div>
+			<div><p>好看的图片</p><img src="img/some.jpg"></div>
+		</div>
+		<div class="article" id="article4">
+			<h3>文章一级标题</h3>
+ 			<h4>文章二级标题</h4>	
+			<div><span>文章作者</span> <span>文章发表时间</span></div>
+			<ol>
+				<li>排名1</li>
+				<li>排名2</li>
+				<li>排名3</li>
+			</ol>
+			<p>下面是一个表格，给表格加了一个border="1"好让你看出是一个表格，你们不用写html时候不要加</p>
+			<table>
+				<thead>
+					<tr>
+						<th>表头</th>
+						<th>表头</th>
+						<th>表头</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>表内容单元格</td>
+						<td>表内容单元格</td>
+						<td><a href="#">操作</a></td>
+					</tr>
+					<tr>
+						<td>表内容单元格</td>
+						<td>表内容单元格</td>
+						<td><a href="#">操作</a></td>
+					</tr>
+					<tr>
+						<td>表内容单元格</td>
+						<td>表内容单元格</td>
+						<td><a href="#">操作</a></td>
+					</tr>
+					<tr>
+						<td>表内容单元格</td>
+						<td>表内容单元格</td>
+						<td><a href="#">操作</a></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td>总计</td>
+						<td colspan="2">1000</td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="footer">
+	<p>©2016 纺大小伙伴</p>
+</div>
+</body>
+</html>
