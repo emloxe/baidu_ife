@@ -1,0 +1,31 @@
+a, address, b, big, blockquote, body,  cite, code, dd, del, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{margin:0;padding:0}
+.wrap,.left,.center,.right{padding: 20px; border: 1px solid #999;background-color:#FFF;box-sizing: border-box; }
+img{width: 80px; height: 80px; background-color: red;border-radius: 5px;}
+
+.wrap{margin: 20px; background-color: #EEE;/*min-height: 520px;*/min-width: 500px}
+
+.left{width:200px; float: left;}
+.left img{float:left;box-shadow: 0 0 5px #aaa;border-radius: 15px;}
+.left h3{margin-left: 100px; font-size: 15px;}
+
+.right{width: 120px; float: right;}
+.right ul li{list-style-type: none;margin-bottom: 10px;}
+.right ul li:last-child{margin-bottom: 0;}
+.right ul li a{text-decoration: none;display: block;}
+.right ul li img{box-shadow: 0 0 2px #aaa}
+.right ul li p{text-align: center;font-size: 12px;}
+
+.center{margin:0 140px 0 220px;word-wrap: break-word;}
+
+/*清除浮动*/
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  *zoom: 1;
+}	

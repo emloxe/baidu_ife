@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	html,body{margin:0;}
+	.main{border:1px solid #999;}
+	/*float使文档脱离文档流，左边固定 中间设置margin值 使左边位置空出来*/
+	.left{background: red;float: left;}
+	/*中间元素为block 设置防止内容太少设置min-height*/
+	.center{background: blue;
+		min-height: 500px;
+		/*允许长单词换到下一行*/
+	 word-wrap: break-word;
+	 /* left right 脱离文档流 中间元素设置左右margin 内容防止被覆盖*/
+	 margin-left:240px;margin-right:140px;}
+	.right{background: green;float: right;}
+	</style>
+</head>
+<body>
+<div class="main">
+<!-- 要先设置left和right ，center为block right写在center后会导致right与(left,center)不在一行显示-->
+	<div class="left">left</div>
+	<div class="right">right</div>
+	<div class="center">center11111111111111111111233333333333333333333333333333333333333333333333344444444444444444444444444444444444444444444444444444444444444444444555555555555555555555555555555555555555555555555555555555555566666666666666666666666666666666666666666666666666666666666667777777777777777777777777777777777777777777777777777888888888888888888888888888888899999999999999999999999999999999999999999999999999999</div>
+	
+</div>
+</body>
+</html>
