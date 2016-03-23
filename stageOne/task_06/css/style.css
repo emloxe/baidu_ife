@@ -1,0 +1,98 @@
+a, address, b, big, blockquote, body,  cite, code, dd, del, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{margin:0;padding:0}
+
+
+.page{margin: 50px auto;width: 980px;height: 1386px;box-shadow: 0 0 4px 1px #ddd;border: 2px solid #ccc;}
+.main{width:892px;margin: auto;}
+
+/*头部*/
+.header{border-bottom: 2px solid #938e87;}
+.header .logo{display: inline-block;width: 110px;height: 61px;background-color:#d45d5c;}
+.header .logo h3{font-size: 12px;color: #fff;font-family: "黑体";margin-top:43px; ;margin-left:5px; }
+.header .date{font-family: "黑体"; font-size: 12px;color: #d45d5c;float: right;margin-top:43px;}
+
+
+
+/*中部*/
+.section1{margin-top: 20px;font-size: 0;}
+
+.section1 .pic_1{width: 641px; height: 301px;display: inline-block;position: relative;}
+.section1 .pic_1 img{width: 100%;height: 100%}
+.section1 .pic_1 .left,.section1 .pic_1 .right{width: 191px;height: 301px;position: absolute;z-index: 1;top: 0;}
+.section1 .pic_1 .left{background-color: rgba(173,194,164,0.5);left: 0;}
+.section1 .pic_1 .right{background-color: rgba(229,189,190,0.5);right: 0;}
+
+.section1 .aside_1{width: 203px; height:301px;margin-left: 48px; box-sizing:border-box; display: inline-block;border-top: 2px solid #cc8091;overflow: hidden;}
+.section1 .aside_1 h4{font-size: 24px; color: #000; font-family: "microsoft yahei";line-height: 32px;text-decoration: underline;text-transform: capitalize;font-variant: small-caps;}
+.section1 .aside_1>p{font-size: 12px;color: #676767; font-family: "楷体"; line-height: 10px;}
+.section1 .aside_1 i{font-size: 116px;color: #75b86b;font-family: "microsoft yahei";margin-left: -16px;}
+.section1 .aside_1 div p{display:inline-block;color: #cc8091;font-family: "microsoft yahei"}
+.section1 .aside_1 div>p{font-size: 55px;}
+.section1 .aside_1 div span{display: inline-block;}
+.section1 .aside_1 div span p:nth-child(1){font-size: 21px;position: relative;top: -12px;}
+.section1 .aside_1 div span p:nth-child(2){font-size: 12px;color: #ccc;position: relative;left:-33px;}
+
+.section1 .article{width: 641px;overflow: hidden;display: inline-block;height: 175px;margin-top: 25px;}
+.section1 .article h5{font-size: 16px; font-family: "微软雅黑"; font-weight: bold;text-decoration: underline;text-transform: capitalize;}
+.section1 .article p{font-size: 12px; color: #767777; font-family: "宋体" line-height: 16px;}
+.section1 .article_1{width: 220px}
+.section1 .article_2{width: 200px;margin-left: 20px;}
+.section1 .article_3{width: 180px;margin-left: 16px;}
+.section1 .article_1 h5{color: #418c59;}
+.section1 .article_2 h5{color: #d2994f;}
+.section1 .article_3 h5{color: #cc7680;}
+.section1 .article_3 p{line-height: 2em}
+.section1 .article_3 ul{margin-top:20px;list-style: none;font:12px/16px "microsoft yahei";}
+.section1 .article_3 ul li{ text-transform: capitalize;opacity: 0.7;filter: alpha(opacity=70);color: #231815;}
+.section1 .article_3 ul span.pink{color: #cd4a48;}
+
+.section2{margin: 60px 0 40px;font-size: 0;}
+.section2 .sec2Left{width: 415px;display: inline-block;}
+.section2 .sec2Left .hgroup{border-bottom: 2px solid #11456b;padding-bottom:10px; }
+.section2 .sec2Left h4{color:#11456b;text-transform: uppercase;font-family: "黑体";font-weight: bold; font-size: 42px;}
+.section2 .sec2Left h4 span{font-size: 72px;color: #f5e327;font-style: oblique;}
+.section2 .sec2Left h4.a{font-size: 42px;}
+.section2 .sec2Left h4.b{font-size: 33px;}
+.section2 .sec2Left .article{font-size: 12px;color: #767777; font-family: "宋体";line-height: 16px;margin-top: 20px;}
+.section2 .sec2Left .article img{float: right; margin: 15px 0 10px 15px;}
+.section2 .sec2Left .article:first-letter {
+	color: #f5e327;
+	float: left;
+	font: 70px/66px "微软雅黑";
+	padding-right: 21px;
+}
+
+.section2 .sec2Right{vertical-align: bottom;display: inline-block;width: 458px;margin-left: 19px;}
+.section2 .sec2Right .pic_2{width: 458px;height: 275px;position: relative;}
+.sec2Right .pic_2 img{width: 100%;height: 100%}
+.sec2Right .pic_2 div{width:458px;height:61px;position: absolute;left: 0;bottom: 0;font-family: "microsoft yahei";background-color: rgba(50,50,50,0.7);z-index: 1;}
+.sec2Right .pic_2 span{z-index: 2;}
+.sec2Right .pic_2 span{display:inline-block;margin:9px 0 0 30px;border-left:3px solid
+#72b16a;padding-left: 10px; }
+.sec2Right .pic_2 span{height: 44px; line-height: 44px;color: #fff;font-size: 26px;}
+.sec2Right .pic_2 span i{font-size: 12px;color: #72b16a;letter-spacing: 0.4em}
+
+.section2 .sec2Right .aside_2{width: 458px;height: 318px;margin-top: 20px;background-color: rgb(238,237,214)}
+.sec2Right .aside_2 ul{list-style-type: none;padding:20px 0 18px 20px;}
+.sec2Right .aside_2 ul li{color: #5a5b5b; font:16px/40px "宋体"; height: 40px;}
+.aside_2 ul li span.triangle{display: inline-block; border-bottom: 8px solid #000; border-left: 6px solid transparent; border-right: 6px solid transparent;width: 0;height: 0;}
+.aside_2 ul li span.qd{float: right;margin-right: 10px;}
+.aside_2 .aside2_1{font-size: 0px;height: 160px;}
+.aside_2 .leftB{vertical-align: top;background-color: rgb(212,93,92);width: 260px;height: 160px;display: inline-block;}
+.aside_2 .leftB div{margin:30px 10px 0 15px;line-height: 86px;display: inline-block;font-size: 110px;font-family: "microsoft yahei";color: #fff;border-right:2px solid #fff;height: 86px; }
+.aside_2 .leftB span{display: inline-block;width: 160px;}
+.aside_2 .leftB h5{color: #fff;font:oblique 21px/24px "黑体";text-transform: uppercase; }
+.aside_2 .leftB p{color: #fff; font:12px/15px "黑体";}
+.aside_2 .rightB{ box-sizing: border-box;padding: 15px;display: inline-block;width: 198px;height: 160px;overflow: hidden;}
+.aside_2 .rightB span.a,.aside_2 .rightB span.b{font-size: 72px;color: #d45d5c;font-family: "黑体";}
+.aside_2 .rightB p{ color:#5a5b5b;font:oblique 14px/16px "黑体";}
+.aside_2 .rightB span.a{float: left;width: 42px;height: 16px;position: relative;top: -15px;left: -38px;}
+.aside_2 .rightB span.b{float: right;width: 42px;height: 37px;position: relative;top: -12px;left: -8px;}
+
+/*尾部*/
+.footer{border-top:1px solid #938e8e; }
+.footer p{text-align: right;color: #d45d5c; font-family: "黑体"}
+
+
+
+
+/*线条要合并入border*/
