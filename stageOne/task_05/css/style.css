@@ -11,7 +11,7 @@ a{text-decoration: none;}
 
 
 /*头部样式*/
-.header{height:50px;background-color: #444;min-width: 600px;}
+.header{height:50px;background-color: #444;}
 .header span{margin-left:20px;}
 .header span img{height: 37px;margin-top: 4px;} 
 .header .nav{display: inline-block;float:right;list-style-type: none;font-size: 0;}
