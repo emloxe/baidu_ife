@@ -1,6 +1,6 @@
 a, address, b, big, blockquote, body,  cite, code, dd, del, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{margin:0;padding:0}
 
-body{font-family: "微软雅黑"}
+body{font-family: "微软雅黑";min-width: 600px;}
 a{text-decoration: none;}
 .main,.article,.mainRight{padding: 20px;}
 /*清除浮动*/
@@ -24,7 +24,7 @@ a{text-decoration: none;}
 /*中部样式*/
 .main{background: #eee;padding: 20px;}
 
-.mainLeft{margin-right: 420px;line-height: 2em;min-width: 600px;}
+.mainLeft{margin-right: 420px;line-height: 2em;}
 .mainLeft .article{background-color: #FFF;margin-bottom: 20px;border: 1px solid #ccc;box-shadow: 1px 1px 2px #bbb}
 .mainLeft .article p{text-indent: 2em}
 #article1 img,#article2 img{width:80%;}
