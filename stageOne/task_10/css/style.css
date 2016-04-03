@@ -1,0 +1,26 @@
+a, address, b, big, blockquote, body,  cite, code, dd, del, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{margin:0;padding:0}
+
+
+.container{display: flex;padding: 20px;justify-content: space-between;}
+.container div{width:150px;}
+.a{height: 120px;border: 2px solid #f00;}
+.b{height: 100px;border: 2px solid #f00;}
+.c{height: 40px;border: 2px solid #f00;}
+.d{height: 200px;border: 2px solid #00f;margin-bottom: 10px;}
+
+@media (min-width: 640px){
+	.container{flex-wrap: nowrap;align-items: center; }
+}
+@media (max-width: 639px){
+	.container{flex-wrap: wrap;align-items: flex-start;}
+	.d{order: -1}
+}
+
+
+
+
+
+
+
+
+

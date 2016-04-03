@@ -1,0 +1,160 @@
+a, address, b, big, blockquote, body,  cite, code, dd, del, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{margin:0;padding:0}
+
+body{min-width: 1280px;font:13px "微软雅黑"}
+ul{list-style-type: none;}
+a{text-decoration: none;color: #999;}
+.mask{position: absolute;width: 100%;height: 100%;top: 0;}
+
+/*头部*/
+header{}
+header h1{margin-left: 40px;height: 60px;font:bold 20px/60px "黑体"; display: inline-block;letter-spacing: 5px;}
+header h1 img{position: relative;top: 7px;}
+header div{float: right;margin-right: 40px;}
+header div ul{display: inline-block;}
+header div a{text-align: center; font: 15px/60px "微软雅黑";display: inline-block;height: 60px;padding:0 10px;margin:0 10px;}
+header div li{display: inline-block;}
+header div li a{display: block;color:#676767;box-sizing: border-box; }
+header div li:first-child a{color: rgb(231,79,77);border-bottom: 4px solid rgb(231,79,77)}
+header div li a:hover{color: rgb(231,79,77);border-bottom: 4px solid rgb(231,79,77)}
+header div>a{color: rgb(231,79,77);}
+header div>a img{position: relative;left: -5px;top: 3px;}
+
+/*中间*/
+.main{}
+.main section{font-size: 0;}
+.section1{position: relative;} 
+.section1 img{width: 100%}
+.section1 .mask{background-color: rgba(3,0,0,0.2);}
+.section1 .aside{width:600px;height:300px;position: absolute;top: 50%;left: 10%;margin-top: -150px;color: #fff;}
+.section1 .aside h3{font: 65px/100px "微软雅黑";}
+.section1 .aside p{font: 22px/35px "微软雅黑";}
+.section1 .aside button{margin-top: 60px; width: 360px;height: 60px;background-color:rgb(231,79,77);border: 0;color: #fff;font-size: 25px;transition: background-color ease-in-out 0.5s;cursor: pointer;}
+.section1 .aside button:hover{background-color:rgb(255,79,77) }
+
+.section2{display: flex;}
+.section2 div{width: 25%}
+.section2 div img{width: 42px;height: 42px;margin: 60px auto 40px;display: block;}
+.section2 div p{color:#767676;font: 14px/18px "黑体";text-align: center;padding: 0 77px 10px;margin-bottom: 50px;box-sizing: border-box;}
+.section2 div:not(:first-child) p{border-left:2px solid #999; }
+
+.section3{background-color: rgb(236,236,236);}
+.section3 img{display: block;margin:auto; padding: 80px 0 28px;}
+.section3 p{font: 59px/96px "黑体";color: rgb(161,161,161);text-align: center;padding-bottom: 60px}
+
+.section4{position: relative;}
+.section4 img{width: 100%}
+.section4 .mask{background-color: rgba(170,53,51,0.2);}
+.aside4{position: absolute;width: 960px;height: ;margin: auto;top: 15%;left: 50%;margin-left: -480px; color: #fff}
+.aside4 h4{text-align: center;font:21px/41px "微软雅黑"; margin-bottom: 50px;}
+.aside4 h4:after{content: "";width: 50px;border-bottom: 4px solid #fff;position: absolute;left: 50%;top: 0;margin:53px 0 0 -25px;}
+.aside4 p{text-align: center;font:12px/31px "微软雅黑";}
+.aside4 form{margin-top:30px;}
+.aside4 form select {
+  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+  border: none;
+  /*很关键：将默认的select选择框样式清除*/
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  /*在选择框的最右侧中间显示小箭头图片*/
+  background: url("../images/p_20.png") no-repeat scroll 195px center transparent;
+  /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+  padding:0 14px 0 5px;
+  background-color: #fff;
+  width: 220px;
+  height: 35px;
+  box-sizing: border-box;
+  margin: 0 10px;
+  color: #767676;
+}
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+.aside4 form select::-ms-expand { display: none; }
+.aside4 form select option{height:27px;background-color:rgb(228,227,229);padding-top:6px; }
+.aside4 form button{border: none;width: 220px;margin: 0 10px;height: 35px;background-color: rgb(190,78,72);color: #fff;font-size: 14px;cursor: pointer;}
+
+.section5{display: flex;justify-content: center;background-color: rgb(247,247,247);padding:110px 0;}
+.section5 .pics{margin: 0 20px;height: 400px;}
+.section5 .pics img{width: 203px;height: 314px;padding: 10px 6px;border: 1px solid #ddd;box-shadow: 0 0 1px #ddd;background-color: #fff;}
+.section5 .pics div{height: 55px;text-align: center;margin: 3px 0;}
+.section5 .pics h5{font: 17px/30px "黑体";color: #2f2f38;}
+.section5 .pics p{font: 13px/20px "黑体"; color: #9f9f9f}
+.section5 .pics2 h5{font: 20px/30px "黑体";letter-spacing: 20px;}
+.section5 .pics2 p{font: 13px/20px "黑体"; }
+
+.section6{}
+.section6 .triangle{position: absolute;top: 50%;border-top:10px solid transparent;border-bottom:10px solid transparent;z-index: 3}
+.sec6Bot a{transition:all 0.7s ease; }
+.section6 .sec6Top{display: flex;align-items: stretch;}
+.sec6Top .sec6_1{width: 66%;flex: 2;position: relative;}
+.sec6Top .sec6_1 img{width: 100%;}
+.sec6Top>div>div{position: absolute;top: 50%;left: 50%;}
+.sec6_1 div{color: #fff;width: 374px; height:366px;  margin-left:-187px ;margin-top:-183px;text-align: center;}
+.sec6_1 div h4{font: 50px/76px "微软雅黑"}
+.sec6_1 div h3{font: 156px/204px "微软雅黑"}
+.sec6_1 div p{font: 22px/43px "微软雅黑"}
+.sec6_2{width: 33%;flex: 1;position: relative;}
+.sec6_2 div{width: 300px; height:306px;  margin-left:-150px ;margin-top:-153px ;}
+.sec6_2 h5{font: 21px/43px "黑体";text-align: center;}
+.sec6_2 h5 span{color:#e25c60;}
+.sec6_2 p{font: 12px/30px "宋体";color: #aaa;}
+.sec6_2 a{color: #e25c60;display: block;height: 30px;width: 100px;font: 12px/30px "微软雅黑";border: 1px solid;text-align: center;margin: 40px auto 20px}
+.sec6_2 ul{text-align: center;}
+.sec6_2 ul li{display: inline-block;width: 10px;height: 10px;border-radius: 50%;background-color: #fff;border: 1px solid rgb(146,146,146);margin: 10px;}
+.sec6_2 ul li:first-child{background-color: rgb(146,146,146)}
+.sec6_2 .triangle{left: -16px;border-right:16px solid #fff;margin-top: -15px;}
+.section6 .sec6Bot{display: flex;align-items: stretch;}
+.sec6Bot>div{position: relative;}
+.sec6Bot>div>div:not(.mask){position: absolute;top: 50%;left: 50%;text-align: center;width: 300px;height: 170px;margin-left:-150px;margin-top: -85px;}
+.sec6Bot div h5{font: 21px/30px "黑体"}
+.sec6Bot div a{font:21px/46px "黑体";display: block;width: 166px;height: 46px;border: 1px solid;text-align: center;margin: auto;}
+.sec6Bot div span{display:block;width: 35px;height: 2px;margin: 20px auto;}
+.sec6Bot .left{width: 33%;flex: 1;background-color: rgb(231,79,77);margin-left: ;margin-top: ;color: #fff}
+.sec6Bot .left span{background-color: #fff}
+.sec6Bot .left a{color: #fff}
+.sec6Bot .left a:hover{color:#e74f4d;background-color: #fff; }
+.sec6Bot .center{width: 33%;flex: 1;color: #323333}
+.sec6Bot .center span:not(.triangle){background-color:#323333}
+.sec6Bot .center a{color: #e74f4d}
+.sec6Bot .center a:hover{color: #fff;background-color: #e74f4d; }
+.sec6Bot .center .triangle{right: -50px;border-left:16px solid #fff;}
+.sec6Bot .right{width: 33%;flex: 1;position: relative;}
+.sec6Bot .right img{width: 100%;}
+.sec6Bot .right .mask{background-color: rgba(3,0,0,0.4);}
+
+.section7{}
+.section7 .sec7Top{text-align: center;padding: 100px 0 80px;width: 600px;margin: auto;}
+.sec7Top h5{font: 25px/36px "黑体";color: #323333}
+.sec7Top span{display: block;width: 30px;height: 2px;background-color: #e74f4d;margin: 10px auto 20px;}
+.sec7Top p{font: 15px/18px "微软雅黑";color: #aaa;}
+.sec7Bot{width: 1250px;margin:0 auto 100px;}
+.sec7Bot .info{width:400px;display: inline-block;}
+.sec7Bot .info div{margin:0 0 40px 0;}
+.sec7Bot .info h5{font: 18px/50px "黑体";}
+.sec7Bot .info p{font: 14px/22px "宋体";color: #a7a7a7;}
+.sec7Bot .info span{font: 13px/20px "宋体";float: right;padding-left: 14px;background:url("../images/p_21.png") no-repeat 0 9px;}
+.sec7Bot .form{width: 750px;display: inline-block;margin-left: 80px;vertical-align: top;}
+.sec7Bot .form div{font-family: "宋体";background-color: #ededef;margin: 10px;box-sizing: border-box;}
+.sec7Bot .form div.text{width: 353px;height: 45px;display: inline-block;line-height: 45px;}
+.sec7Bot .form div.area{width:726px;height: 200px;}
+.sec7Bot .form label{font-size: 14px;width: 80px;display: inline-block;padding-left: 20px;}
+.sec7Bot .form input{border: none;background-color:#ededef;width: 200px;outline: none; }
+.sec7Bot .form div.area label{display: block;width: 300px;padding: 15px 0 10px 20px;} 
+.sec7Bot .form div.area textarea{width: 705px;height: 144px;resize: none;background-color: #ededef;padding-left: 20px;border: none;outline: none;}
+.sec7Bot .form button{width: 726px;height: 45px;margin: 10px;border: none;cursor: pointer;font-size: 16px;}
+
+.section8{background-color:#32363e;color: #fff;}
+.section8>div{text-align: center;width: 600px;margin: auto;padding: 70px 0}
+.section8 h5{font: 25px/40px "黑体"}
+.section8 p{font: 14px/23px "宋体";padding: 0 30px;margin-bottom: 40px;}
+.section8 input{width: 470px;height: 42px;border: none;font-size: 16px;padding-left: 10px;}
+.section8 button{width: 110px;height: 44px;border: none;background-color: #6f7178;vertical-align: top;color: #fff;font-size:16px }
+.section8 ul{margin-top: 30px;}
+.section8 li{display: inline-block;padding: 15px;}
+
+
+/*尾部*/
+footer{background-color: #2f2f38;color: #fff;padding: 20px 30px;}
+footer span.a{float: right;}
+
+
+
