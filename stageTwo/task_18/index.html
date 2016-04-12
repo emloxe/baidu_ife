@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	input{height: 20px;width: 170px;}
+	button{background-color: transparent;border: 1px solid #ccc; border-radius: 5px;margin: 3px;}
+	button:nth-child(4){margin-left: 30px;}
+	.result div{display: inline-block;background-color: #f30000;width: 50px;height: 50px;margin: 2px;text-align: center;line-height: 50px;}
+	</style>
+</head>
+<body>
+
+<div>
+	<input type="text" id="val" placeholder="请输入数据">
+	<button id="leftIn">左侧入</button>
+	<button id="rightIn">右侧入</button>
+	<button id="leftOut">左侧出</button>
+	<button id="rightOut">右侧出</button>
+</div>
+<div id="result" class="result">
+	
+</div>
+
+<script>
+var data = [];
+var result = document.getElementById("result");
+
+function leftIn(){
+	var val = document.getElementById("val").value;
+	document.getElementById("val").value = null;
+	if (isNaN(val)) {
+		alert("请输入数字");
+		return;
+	}
+	data.unshift(val);
+}
+function rightIn(){
+	var val = document.getElementById("val").value;
+	document.getElementById("val").value = null;
+	if (isNaN(val)) {
+		alert("请输入数字");
+		return;
+	}
+	data.push(val);
+}
+function leftOut(){
+	data.shift();
+}
+function rightOut(){
+	data.pop();
+}
+function render(){
+	result.innerHTML = "";
+	var fr = "";
+	for (var i = 0; i < data.length; i++) {
+		fr += "<div>"+data[i]+"</div>";
+	}
+	result.innerHTML = fr;
+}
+
+function init(){
+	document.getElementById("leftIn").onclick = function(){
+	leftIn();
+	render();
+	}
+	document.getElementById("rightIn").onclick = function(){
+	rightIn();
+	render();
+	}
+	document.getElementById("leftOut").onclick = function(){
+	leftOut();
+	render();
+	}
+	document.getElementById("rightOut").onclick = function(){
+	rightOut();
+	render();
+	}
+}
+init();
+</script>
+</body>
+</html>

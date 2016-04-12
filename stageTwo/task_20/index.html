@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>基础JavaScript练习（三）</title>	
+	<style type="text/css">
+	textarea{min-height:120px;width: 300px; }
+	button{background-color: transparent;border: 1px solid #ccc; border-radius: 5px;margin: 3px;}
+	.result{max-width: 1000px;}
+	.result ul{list-style: none;}
+	.result li{display: inline-block;padding: 5px 15px;background-color: #ddd;margin:3px;word-wrap:break-word;}
+	.select{color: #00f}
+	</style>
+</head>
+<body>
+<div>
+	<textarea id="text" placeholder="允许一次批量输入多个内容，格式可以为数字、中文、英文等，可以通过用回车，逗号（全角半角均可），顿号，空格（全角半角、Tab等均可）等符号作为不同内容的间隔"></textarea>
+	<button id="leftIn">左侧入</button>
+	<button id="rightIn">右侧入</button>
+	<button id="leftOut">左侧出</button>
+	<button id="rightOut">右侧出</button>
+	<input type="text" id="searchText">
+	<button id="search">查询</button>
+</div>
+
+<div id="result" class="result">
+	
+</div>
+
+<script type="text/javascript">
+function $(id){
+	return document.querySelector(id);
+}
+
+var data = [];
+var val;
+
+/*获取获取文本框内容并处理数据*/
+function getData(){
+	val = $("#text").value.trim().split(/[^0-9a-zA-Z\u4e00-\u9fa5]+/);
+	val = val.filter(function(i){return i.length>0});
+	$("#text").value = null;
+}
+
+/*绘制内容*/
+function render(data){
+	$("#result").innerHTML = "";
+	var ul = document.createElement("ul");
+	
+	for (var i = 0; i < data.length; i++) {
+		var li = document.createElement("li");
+		li.innerHTML = data[i];
+		ul.appendChild(li);
+	}
+	$("#result").appendChild(ul);	
+}
+
+/*查询*/
+function searchData(){
+	var match = $("#searchText").value;
+	if (match !="") {
+		var dataNew = data;
+		dataNew = dataNew.map(function (d){
+			return  d.replace(new RegExp(match, "g"), "<span class='select'>" + match + "</span>");
+		});
+	}
+	render(dataNew);
+}
+
+/*点击事件*/
+function init(){
+	$("#leftIn").onclick = function(){
+		getData();
+		val.reverse();
+		for (var i = 0; i < val.length; i++) {
+			data.unshift(val[i]);
+		}
+		val = null;
+		render(data);
+	}
+	$("#rightIn").onclick = function(){
+		getData();
+		for (var i = 0; i < val.length; i++) {
+			data.push(val[i]);
+		}
+		val = null;
+		render(data);
+	}
+	$("#leftOut").onclick = function(){
+		data.shift();
+		render(data);
+	}
+	$("#rightOut").onclick = function(){
+		data.pop();
+		render(data);
+	}
+	$("#search").onclick = function(){
+		searchData();
+	}
+}
+init()
+</script>
+</body>
+</html>

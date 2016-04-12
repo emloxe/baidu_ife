@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>基础JavaScript练习（二）</title>
+	<style type="text/css">
+	input{height: 20px;width: 170px;}
+	button{background-color: transparent;border: 1px solid #ccc; border-radius: 5px;margin: 3px;}
+	button:nth-child(4){margin-left: 20px;}
+	.result ul{display: flex;flex-wrap: nowrap;justify-content: flex-start;align-items: flex-end;height: 280px;list-style: none;padding: 0}
+	.result li{background-color: #ff4d00;width: 18px;margin: 2px;text-align: center;color: #fff;}
+	</style>
+</head>
+<body>
+
+<div>
+	<input type="text" id="val" placeholder="请输入大于10小于100的数字">
+	<button id="leftIn">左侧入</button>
+	<button id="rightIn">右侧入</button>
+	<button id="leftOut">左侧出</button>
+	<button id="rightOut">右侧出</button>
+	<button id="randomData">随机生成</button>
+	<button id="sortData">排序</button>
+	<label for="speed">排序速度</label>
+	<select id="speed" name="speed" id="speed">
+	    <option value="20">10</option>
+	    <option value="50">50</option>
+	    <option value="100">100</option>
+	    <option value="200">200</option>
+	</select>
+</div>
+<div id="result" class="result">
+	
+</div>
+
+<script>
+var data = [];
+var result = document.getElementById("result");
+var val;
+var	maxData = 60;
+
+/*判断获取到的数据是否符合要求*/
+function secData(){
+	val = document.getElementById("val").value;
+	document.getElementById("val").value = null;
+	if (isNaN(val)||val<10||val>=100) {
+		alert("数据不符合要求，请输入大于10小于100的数字");
+		return 0;
+	}else if(data.length >= maxData) {
+		alert("队列数量超过"+maxData);
+		return 0;
+	}
+}
+
+
+/*根据数据绘制*/
+function render(){
+	result.innerHTML = "";
+	var ul = document.createElement("ul");
+
+	for (var i = 0; i < data.length; i++) {
+		var li = document.createElement("li");
+		li.innerHTML = data[i];
+		li.style.height = Math.floor(data[i]*2.8)+"px";
+		li.setAttribute("id","li-"+i);
+		ul.appendChild(li);
+	}
+	result.appendChild(ul);
+}
+
+/*随机生成一组数*/
+function addranDate(){
+	data = [];
+	for (var i = 0; i < 100; i++) {
+		if (data.length >= 30) break;
+		var da = Math.floor(Math.random()*100);
+		if (da >= 10) {
+			data.push(da);
+		}
+		
+	}
+}
+
+/*排序*/
+function bubbleSort(){
+	var speed = document.getElementById("speed").value;
+	var swap = function(index1,index2){
+		var aux = data[index1];
+		data[index1] = data[index2];
+		data[index2] = aux;
+	}
+	var colorB = function(index){
+		var bgcB = document.getElementById("li-"+index);
+		bgcB.style.backgroundColor = "#00f";
+	}
+	var colorR = function(index){
+		var bgcR = document.getElementById("li-"+index);
+		bgcR.style.backgroundColor = "#ff4d00";
+	}
+
+	var length = data.length;
+	/*for (var i = 0; i < length; i++) {
+		for (var j = 0; j < length-1-i; j++) {
+			colorB(j);
+			colorG(j+1);
+
+			if (data[j] > data[j+1]) {
+				swap(j,j+1);	
+			}
+		}
+	}*/
+	var timer = setInterval(run,speed);
+	var i = 0,j = 0;
+	function run(){
+		
+		if (i < length) {
+			if (j < length-1-i) {
+				colorB(j);
+				if (data[j] > data[j+1]) {
+					swap(j,j+1);	
+					render();
+				}
+				colorR(j);
+				colorB(j+1);
+				j++;
+			} else {
+				colorR(j);
+				j = 0;
+				i++;
+			}	
+		}else{
+			clearInterval(timer);
+			return;
+		}
+	}
+	
+	
+}
+
+/*点击操作*/
+function init(){
+	document.getElementById("leftIn").onclick = function(){
+		if( secData() == 0 ) return;
+		data.unshift(val);
+		render();
+	}
+	document.getElementById("rightIn").onclick = function(){
+		if( secData() == 0 ) return;
+		data.push(val);
+		render();
+	}
+	document.getElementById("leftOut").onclick = function(){
+		data.shift();
+		render();
+	}
+	document.getElementById("rightOut").onclick = function(){
+		data.pop();
+		render();
+	}
+	document.getElementById("randomData").onclick = function(){
+		addranDate();
+		render();
+	}
+	document.getElementById("sortData").onclick = function(){
+		bubbleSort();
+	}
+}
+init();
+</script>
+</body>
+</html>
