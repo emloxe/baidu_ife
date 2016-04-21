@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>基础JavaScript练习（四）</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">	
+</head>
+<body>
+
+<label for="tag_input">Tag:</label><input type="text" name="tag_input" id="tag_input" class="tag-input">
+<div id="tag_list" class="tag-list"></div>
+
+<textarea id="hobby_input" class="hobby-input"></textarea>
+<button id="hobby_btn" class="hobby-btn">确认兴趣爱好</button>
+<div id="hobby_list" class="hobby-list" ></div>
+
+<script type="text/javascript">
+
+function addEventHandler(ele,event,handler){
+	if (window.addEleventListener) {
+		ele.addEleventListener(event,handler,false);
+	} else if (window.attachEvent) {
+		ele.attachEvent("on"+event,handler);
+	} else {
+		ele["on"+event] = handler;
+	}
+}
+
+function $(id){
+	return typeof id==='string'?document.getElementById(id):id;
+}
+/*封装队列方法*/
+function Queue(){
+	var items = [];
+	this.enqueue = function(ele){
+		items.push(ele);
+	}
+	this.dequeue = function(){
+		items.shift();
+	}
+	this.size = function(){
+		return items.length;
+	}
+	this.has = function(val){
+		if (items.indexOf(val) === -1) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	this.remove = function(val){
+		for (var i = 0; i < items.length; i++) {
+			if(items[i] === val){
+				var index = i;
+				break;
+			}
+		}
+		items.splice(index,1);
+	}
+	this.front = function(){
+		return items[0];
+	}
+	this.values = function(){
+		return items;
+	}
+}
+
+function render(arr,ele){
+	var span = "";
+	for (var i = 0; i < arr.length; i++) {
+		span += "<span>"+arr[i]+"</span>";
+	}
+	ele.innerHTML = span;
+}
+
+
+ String.prototype.trim=function(){
+　　    return this.replace(/(^\s*)|(\s*$)/g, "");
+　　 }
+
+function showTag(event){
+	if ((typeof q1) == "undefined") {
+		q1 = new Queue();
+	}
+	var tagInput = $("tag_input").value;
+
+	if (/[\s\r\n,，]/.test(tagInput)||event.keyCode == 13) {
+		tagInput = tagInput.replace(/[\s\r,]*/ig,"");
+
+		if(tagInput.trim()!==""&&q1.size()<9){
+
+			if (!q1.has(tagInput)) {
+				q1.enqueue(tagInput);
+				render(q1.values(),$("tag_list"));
+			}
+		}else if(q1.size() === 11){
+			var c = confirm("只能输入十个tag,是否将"+q1.front()+"删除");
+
+			if (c) {
+				q1.dequeue();
+				q1.enqueue(tagInput);
+				render(q1.values(),$("tag_list"));
+			} 
+		}
+		$("tag_input").value = "";
+	}
+
+}
+
+function showHobby(){
+	var hobbyInput = $("hobby_input").value;
+	if (hobbyInput.trim() !=="") {
+		var q = hobbyInput.trim().split(/[\n\r\s\t,.，。、]+/);
+		q2 = new Queue();
+		for (var i = 0; i < q.length; i++) {
+			if (!q2.has(q[i])) {
+				q2.enqueue(q[i]);
+			}
+			if (q2.size()>10) {
+				q2.dequeue();
+			}
+		}
+
+		render(q2.values(),$("hobby_list"));
+		$("hobby_input").value = "";
+	}	
+}
+
+
+
+addEventHandler($("tag_input"),"keyup",showTag);
+addEventHandler($("tag_list"),"mouseover",function(e){
+	if(e.target && e.target.nodeName == "SPAN") { 
+			e.target.firstChild.insertData(0,'点击删除');
+	}
+});
+addEventHandler($("tag_list"),"mouseout",function(e){
+	if(e.target && e.target.nodeName == "SPAN") { 
+			e.target.firstChild.deleteData(0,4); 
+	}
+});
+addEventHandler($("tag_list"),"click",function(e){
+	if (e.target && e.target.nodeName == "SPAN") {
+		var data = e.target.innerHTML.slice(4);
+		q1.remove(data);
+		render(q1.values(),$("tag_list"));
+	}
+});
+addEventHandler($("hobby_btn"),"click",showHobby);
+
+
+
+
+</script>
+</body>
+</html>

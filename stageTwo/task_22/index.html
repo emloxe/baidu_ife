@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">	
+</head>
+<body>
+
+<div class="wrap">
+	<div id="root">
+		<div>
+			<div>
+				<div></div>
+				<div></div>
+			</div>
+			<div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<div></div>
+				<div></div>
+			</div>
+			<div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<button id="pre_tra">前序遍历</button>
+<button id="in_tra">中序遍历</button>
+<button id="post_tra">后序遍历</button>
+<label for="speed">速度</label>
+<select name="speed" id="speed">
+	<option value="100">快</option>
+	<option value="300">中</option>
+	<option value="500">慢</option>
+</select>
+<script type="text/javascript">
+
+/*清除root内空白节点的影响*/
+$("#root").innerHTML =$("#root").innerHTML .replace(/\s+/g,"");
+
+function $(id){
+	return document.querySelector(id);
+}
+
+
+function addEventHandler(ele,event,handler){
+	if(window.addEventListener){
+		ele.addEventListener(event,handler,false);
+	}else if (window.attachEvent) {
+		ele.attachEvent("on"+event,handler);
+	}else{
+		ele["on"+event] = handler;
+	}
+}
+
+
+/*构造树*/
+function Tree(n){
+	var root = n;
+
+	/*前序遍历*/
+	this.preOrderTraverse = function(callback){
+		preOrderTraverseNode(root,callback);
+	}
+	var preOrderTraverseNode = function(node,callback){
+
+		if (node!==null) {
+			callback(node);
+			preOrderTraverseNode(node.firstChild,callback);
+			preOrderTraverseNode(node.lastChild,callback);
+		}
+	}
+	/*中序遍历*/
+	this.inOrderTraverse = function(callback){
+		inOrderTraverseNode(root,callback);
+	}
+	var inOrderTraverseNode = function(node,callback){
+		if (node!==null) {
+			inOrderTraverseNode(node.firstChild,callback);
+			callback(node);
+			inOrderTraverseNode(node.lastChild,callback);
+		}
+	}
+	/*后序遍历*/
+	this.postOrderTraverse = function(callback){
+		postOrderTraverseNode(root,callback);
+	}
+	var postOrderTraverseNode = function(node,callback){
+		if (node!==null) {
+			postOrderTraverseNode(node.firstChild,callback);
+			postOrderTraverseNode(node.lastChild,callback);
+			callback(node);
+		}
+	}
+}	
+
+/*存储数据*/
+function getNode(node) {
+	arrNode.push(node);
+}
+
+/*改变背景颜色*/
+function changeBGC(arr){
+	var speed = $("#speed").value;
+	var len = arr.length;
+	var i = 0;
+	var t =setInterval(function(){
+		if (i >= len) {
+			arr[i-1].style.backgroundColor = "#fff";
+			clearInterval(t);
+		}else{
+			arr[i].style.backgroundColor = "#00f";
+			if(i !=0){
+				arr[i-1].style.backgroundColor = "#fff";
+			}
+			i++;
+		}
+
+	},speed);
+}
+
+/*arrNode数组用于存放遍历后节点数据*/
+var arrNode;
+function showPre(){
+	arrNode = [];
+	var treePre = new Tree($("#root"));
+	treePre.preOrderTraverse(getNode);
+	changeBGC(arrNode);	
+}
+
+function showIn(){
+	arrNode = [];
+	var treePre = new Tree($("#root"));
+	treePre.inOrderTraverse(getNode);
+	changeBGC(arrNode);	
+}
+
+
+function showPost(){
+	arrNode = [];
+	var treePre = new Tree($("#root"));
+	treePre.postOrderTraverse(getNode);
+	changeBGC(arrNode);	
+}
+
+addEventHandler($("#pre_tra"),"click",showPre);
+addEventHandler($("#in_tra"),"click",showIn);
+addEventHandler($("#post_tra"),"click",showPost);
+
+</script>
+</body>
+</html>
