@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript和树（三）</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">	
+</head>
+<body>
+
+<div class="wrap">
+	<div id="root">super
+		<div>car
+			<div>apple
+				<div>pear</div>
+				<div>pig</div>
+				<div>cola</div>
+				<div>soccor</div>
+			</div>
+			<div>phone</div>
+			<div>call
+				<div>book</div>
+				<div>school</div>
+			</div>
+		</div>
+		<div>note
+			<div>human
+				<div>code</div>
+				<div>operate</div>
+				<div>men</div>
+			</div>
+			<div>program
+				<div>element
+					<div>cat</div>
+				</div>
+				<div>glass</div>
+			</div>
+		</div>
+		<div>flash</div>
+	</div>
+</div>
+
+
+<p>
+	<button id="dep_btn">深度优先遍历</button>
+	<button id="bread_btn">广度优先遍历</button>
+
+	<label for="speed">速度</label>
+	<select name="speed" id="speed">
+		<option value="100">快</option>
+		<option value="300">中</option>
+		<option value="500">慢</option>
+	</select>
+	&nbsp;&nbsp;&nbsp;
+	<input placeholder="请输入要查找的内容" id="search_val"></input>
+	<select name="search_way" id="search_way">
+		<option value="searchDep">深度优先</option>
+		<option value="searchBread">广度优先</option>
+	</select>
+	<button id="search_btn">查找</button>
+
+</p>
+<br>
+<p>
+	<button id="delete_btn">删除</button>
+	&nbsp;&nbsp;&nbsp;
+	<input id="add_txt" type="text" placeholder="输入节点内容"></input>
+	<button id="add_btn">添加</button>
+</p>
+
+
+
+<script type="text/javascript">
+/*arrNode数组用于存放遍历后节点数据*/
+var arrNode;
+/*用于阻止遍历进行中时，再次遍历*/
+var inLoop = false;
+
+
+/*清除root内空白节点的影响*/
+$("#root").innerHTML =$("#root").innerHTML .replace(/\s+/g,"");
+
+function $(id){
+	return document.querySelector(id);
+}
+
+
+function addEventHandler(ele,event,handler){
+	if(window.addEventListener){
+		ele.addEventListener(event,handler,false);
+	}else if (window.attachEvent) {
+		ele.attachEvent("on"+event,handler);
+	}else{
+		ele["on"+event] = handler;
+	}
+}
+
+
+/*构造树*/
+function Tree(n){
+	var root = n;
+	var BFindex = 0;//广度优先遍历自增标识符
+
+	/*深度遍历*/
+	this.depTraverse = function(callback){
+		depTraverseNode(root,callback);
+	}
+	var depTraverseNode = function(node,callback){
+
+		if (node!=null) {
+			callback(node);
+			for (var i = 0 , len = node.childNodes.length; i < len; i++) {
+				depTraverseNode(node.childNodes[i],callback);
+			}
+			
+		}
+	}
+	/*广度遍历*/
+	this.breadTraverse = function(callback){
+		breadTraverseNode(root,callback);
+	}
+	var breadTraverseNode = function(node,callback){
+		if (node!=null) {
+			callback(node);
+			breadTraverseNode(node.nextElementSibling,callback);
+			node = arrNode[BFindex++];
+			breadTraverseNode(node.firstElementChild,callback);
+		}
+	}
+
+}	
+
+/*存储数据,tree中的回调函数*/
+function getNode(node) {
+	if (node.nodeType === 1) {
+		arrNode.push(node);
+	}
+	
+}
+
+/*改变背景颜色*/
+function changeBGC(){
+	inLoop = true;
+    var         speed = $("#speed").value;
+			      len = arrNode.length,
+			        i = 0,
+			searchVal = $("#search_val").value,
+	 $("#search_val").value = "",
+  			searchArr = [];
+	var t =setInterval(function(){
+		if (i >= len) {
+			arrNode[i-1].className = "";
+			clearInterval(t);
+			inLoop = false;
+			if (searchVal != "") {
+				if(searchArr.length == 0){
+					alert("没有查询到");
+				}else{
+					for(var j = 0,len2 = searchArr.length;j<len2;j++){
+						searchArr[j].className = "show-red";
+					}
+				}
+			}				
+		}else{
+			if(RegExp(searchVal).test(arrNode[i].firstChild.textContent)&&searchVal!=""){
+				arrNode[i].className = "show-red";
+				searchArr.push(arrNode[i]);
+			}else{
+				arrNode[i].className = "show-blue";
+			}
+			 if(i !=0){
+				arrNode[i-1].className = "";
+			}
+			i++;
+		}
+
+	},speed);
+	
+}
+
+/*清空背景颜色*/
+function clearBGC(){
+	if(arrNode){
+		for (var i = 0; i < arrNode.length; i++) {
+			arrNode[i].className = "";
+		}
+	}	
+}
+
+/*将点击过的div高亮显示*/
+function showSelect(){
+	$("div").onclick = function(event){
+		if(event.target.className == "show-green"){
+			event.target.className="";
+		}else{
+			event.target.className = "show-green";
+		}
+	}
+}
+
+function showDep(){
+	if(!inLoop){
+		clearBGC();
+		arrNode = [];
+		var treeDep = new Tree($("#root"));
+		treeDep.depTraverse(getNode);
+		changeBGC();
+	}else{
+		alert("正在遍历");
+	}		
+}
+
+function showBread(){
+	if(!inLoop){
+		clearBGC();
+		arrNode = [];
+		var treeBread = new Tree($("#root"));
+		treeBread.breadTraverse(getNode);
+		changeBGC(arrNode);	
+	}else{
+		alert("正在遍历");
+	}
+}
+function searchNode(){
+	if(!inLoop){
+		clearBGC();
+		var searchWay = $("#search_way").value;
+		if (searchWay ==  'searchDep') {
+			showDep();
+		}else{
+			showBread();
+		}
+	}else{
+		alert("正在遍历");
+	}	
+}
+
+
+function deleteNode(){
+	if ($(".show-green")) {
+		var sel = document.querySelectorAll(".show-green");
+		for (var i = 0; i < sel.length; i++) {
+		sel[i].parentNode.removeChild(sel[i]);
+		}
+	}	
+}
+
+function addNode(){
+	if ($(".show-green")) {
+		var sel = document.querySelectorAll(".show-green");		
+		addTxt = $("#add_txt").value;
+		$("#add_txt").value = "";
+		for (var i = 0; i < sel.length; i++) {
+			var div = document.createElement("div");
+			div.innerHTML = addTxt;
+			sel[i].appendChild(div);
+			sel[i].className = "";
+		}
+	}
+}
+
+function init(){
+	showSelect();
+	addEventHandler($("#dep_btn"),"click",showDep);
+	addEventHandler($("#bread_btn"),"click",showBread);
+	addEventHandler($("#search_btn"),"click",searchNode);
+	addEventHandler($("#delete_btn"),"click",deleteNode);
+	addEventHandler($("#add_btn"),"click",addNode);
+}
+
+init();
+
+
+</script>
+</body>
+</html>
