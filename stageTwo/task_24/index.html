@@ -107,6 +107,7 @@ function Tree(n){
 	var depTraverseNode = function(node,callback){
 
 		if (node!=null) {
+			console.log(node);
 			callback(node);
 			for (var i = 0 , len = node.childNodes.length; i < len; i++) {
 				depTraverseNode(node.childNodes[i],callback);

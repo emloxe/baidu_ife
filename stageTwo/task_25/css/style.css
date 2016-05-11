@@ -1,0 +1,19 @@
+a, address, b, big, blockquote, body,  cite, code, dd, del, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{margin:0;padding:0}
+
+
+.main{margin: 50px auto;width: 500px;}
+
+
+.main-lis{display: inline-block;background-color: #efefef;font: 15px/18px "微软雅黑" ;width: 300px}
+.main-lis ul{list-style-type: none;padding-left:10px; }
+.main-lis ul li{padding: 0 13px;position: relative;width: 200px;}
+.main-lis ul li a{text-decoration: none;color: #000;cursor: pointer;}
+.main-lis ul li a span{display:none;margin-left: 6px; color: #111;}
+.main-lis ul li a:hover{color: #777}
+.main-lis ul li a:hover span{display: inline-block;}
+
+li.openul::before,li.closeul::before{content: "";width:0;height:0;position: absolute;top: 6px;}
+li.openul::before{border-top: 8px solid #888;border-left: 5px solid transparent;border-right: 5px solid transparent;left: -1px;}
+li.closeul::before{border-left: 8px solid #888;border-top: 5px solid transparent;border-bottom: 5px solid transparent;left: 0px;}
+
+.main-lis ul li a.red-color{color: #f00;}
