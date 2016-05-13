@@ -1,0 +1,21 @@
+a, address, b, big, blockquote, body,  cite, code, dd, del, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{margin:0;padding:0}
+
+
+table{margin:100px auto;}
+table tr td:nth-child(1){width: 50px}
+table tr td input{width: 230px;height: 30px;padding: 0 5px;border: 1px solid #ccc;border-radius: 5px;}
+table tr td input.red{border-color: #DF020E}
+table tr td input.green{border-color: #63BE51}
+table tr td button{width: 60px;height: 30px;background-color: #3079B9;color: #fff;outline: 0;border: 1px solid #3079B9;border-radius: 5px;}
+.validation-message{color: #ddd;font-size: 14px}
+
+
+
+
+
+
+
+
+
+
+

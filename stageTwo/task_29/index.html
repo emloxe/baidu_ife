@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>单个表单项的检验</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">	
+</head>
+<body>
+
+<table>
+	<tr>
+		<td>名称</td>
+		<td><input type="text" id="name-text"></td>
+		<td><button id="test-btn">验证</button></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td id="validation-message" class="validation-message">必填，长度为4~16个字符</td>
+		<td></td>
+	</tr>
+</table>
+
+
+<script type="text/javascript">
+
+	var testBtn = document.getElementById("test-btn");
+	var validationMessage = document.getElementById("validation-message");
+
+	/*点击*/
+	testBtn.onclick = function(){
+		var nameText = document.getElementById("name-text");
+		
+		if (nameText.value.replace(/\s+/,"") == "") {
+			nameText.className = "red";
+			validationMessage.innerHTML = "姓名不能为空";
+			validationMessage.style.color = "red";
+		}else if(countLenght(nameText.value)>=4&&countLenght(nameText.value)<=16){
+			nameText.className = "green";
+			validationMessage.innerHTML = "格式正确";
+			validationMessage.style.color = "green";
+		}else{
+			nameText.className = "red";
+			validationMessage.innerHTML = "长度为4~16个字符";
+			validationMessage.style.color = "red";
+		}
+	}
+
+	/*检测长度*/
+	function countLenght(str){
+		var inputLength = 0;
+		for (var i = 0; i < str.length; i++) {
+			var countCode = str.charCodeAt(i);
+			if (countCode >= 0&&countCode<=128) {
+				inputLength +=1 ;
+			}else{
+				inputLength +=2 ;
+			}
+		}
+		return inputLength;
+	}
+</script>
+</body>
+</html>
