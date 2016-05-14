@@ -1,0 +1,33 @@
+a, address, b, big, blockquote, body,  cite, code, dd, del, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{margin:0;padding:0}
+
+
+table{margin: 50px auto;}
+tbody tr:nth-child(odd){font-size: 18px;}
+tbody tr:nth-child(even){font-size: 15px;height: 50px; }
+tbody tr:nth-child(even) td{vertical-align: top}
+tr td:nth-child(odd){width: 80px;text-align: right;padding-right: 20px;}
+tr td input{width: 350px;height: 30px; padding:0 5px; border-radius: 3px;border: 1px solid #ccc;}
+tr td input:focus{ border-color: #63AFEC;box-shadow: 0 1px 1px #D2E7FA;}
+
+tr.submit-btn td{text-align: right;}
+tr.submit-btn td button{width: 80px; height: 40px;background-color: #3079B9;border: 1px solid #3079B9;color: #fff;border-radius: 5px;}
+
+
+/*js动态加上的class*/
+tr td.hint{color: #aaa}
+tr td input.danger{border: 1px solid #DA0217;}
+tr td.danger{color: #DA0217}
+tr td input.success{border: 1px solid #5FB947;}
+tr td.success{color: #5FB947}
+
+
+
+
+
+
+
+
+
+
+
+
