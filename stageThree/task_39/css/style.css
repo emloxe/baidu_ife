@@ -1,0 +1,18 @@
+a, address, b, big, blockquote, body,  cite, code, dd, del, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{margin:0;padding:0}
+
+p{text-indent: 2em;margin:0 50px; width: 700px;display: block;}
+table{margin-left: 20px;}
+
+.my-table {border-collapse:collapse;}
+.my-table,th,td,tr {border:1px solid #222;box-sizing: border-box;}
+.my-table thead{background: #dfdfdf}
+.my-table th ,.my-table td{padding: 10px 20px;text-align: center;}
+
+
+.t-icon{cursor: pointer;display: inline-block;width: 0;height: 0;border-right:5px solid transparent;border-left:5px solid transparent;  }
+.t-icon-up{border-top: 8px solid #888;  margin: 0 1px 0 5px; }
+.t-icon-down{border-bottom: 8px solid #888;}
+
+
+
+

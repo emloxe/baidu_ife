@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>UI组件之浮出层</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">	
+</head>
+<body>
+
+<div id="login" class="top-login">登录</div>
+<div id="dialog" class="dialog">
+	<div id="dialog_top" class="dialog-top">这是一个浮出层</div>
+	<div>这是一个浮出层</div>
+	<div class="dialog-btn">
+		<span id="a">确认</span>
+		<span id="close_btn">取消</span>
+	</div>	
+</div>
+<div id="mask" class="mask"></div>
+
+<script type="text/javascript" src="js/dialog.js"></script>
+<script type="text/javascript">
+	var $ = function (id){
+		return document.getElementById(id);
+	}
+
+	var dialog = new Dialog({
+		clickDom : $('login'),
+		showDom : $('dialog'),
+		maskDom : $('mask')
+	});
+	//设置关闭按钮
+	dialog.close($('close_btn')).move($('dialog_top')).resize(300,100).close($('a'));
+
+</script>
+</body>
+</html>
