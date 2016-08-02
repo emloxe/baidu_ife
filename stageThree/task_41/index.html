@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>UI组件之日历组件（二）</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">	
+</head>
+<body>
+<div class="wrap">
+	<input type="text" id="date_show"  readonly="readonly">
+	<div id="cal"></div>
+</div>
+
+
+
+<script type="text/javascript" src="js/simpleCalender.js"></script>
+<script type="text/javascript">
+
+	new SimpleCalender({
+		wrapDom : document.getElementById('cal'),
+		clickCallBack : fn
+	});
+
+	function $(id){
+		return document.getElementById(id);
+	}
+
+	(function(){
+		var today = new Date();
+		var thisYear = today.getFullYear();
+		var thisMonth = today.getMonth()+1;
+		var thisDate = today.getDate();
+		$('date_show').value = thisYear+'年'+thisMonth+'月'+thisDate+'日';
+	})();
+
+	var isShow = true;	
+	$('date_show').onclick = function(){
+		if(isShow){
+			$('cal').style.display = 'block';
+		}else{
+			$('cal').style.display = 'none';
+		}
+		isShow = !isShow;
+	}
+
+	function fn(y,m,d){
+		$('date_show').value = y+'年'+m+'月'+d+'日';
+		$('cal').style.display = 'none';
+		isShow = !isShow;
+	}
+
+</script>
+</body>
+</html>

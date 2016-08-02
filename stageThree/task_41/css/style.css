@@ -1,0 +1,38 @@
+a, address, b, big, blockquote, body,  cite, code, dd, del, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{margin:0;padding:0}
+
+
+.wrap{margin: 20px 50px;}
+#date_show{text-align: center;}
+#cal{display: none;}
+
+
+
+
+
+
+/*js动态添加的节点 样式*/
+.c-mytable{border: 1px solid #aaa;border-top: none;width: 256px;height: 196px;padding: 8px 10px;font-family: '微软雅黑'}
+.c-mytable caption{background-color: #C61B01;color: #fff;height: 25px}
+.c-mytable .c-caption{position: relative;}
+.c-mytable .c-caption p{line-height: 25px;cursor:default;}
+.c-mytable .c-caption .c-ctrol{display: block;width: 0;height: 0;position: absolute;top:8px;border-top: 5px solid transparent;border-bottom: 5px solid transparent;}
+.c-mytable .c-caption .c-left-ctrol{left: 5px;border-right: 8px solid #fff;}
+.c-mytable .c-caption .c-right-ctrol{right: 5px;border-left: 8px solid #fff;}
+
+.c-mytable thead,.c-mytable tbody{color: #787878;}
+.c-mytable td{cursor:default;padding: 2px 5px;text-align: center;border: 1px solid #fff;box-sizing: border-box;}
+
+.c-mytable tr td.c-this-month:nth-child(1){color: #C61B01;}
+.c-mytable tr td.c-this-month:nth-child(7){color: #C61B01;}
+.c-mytable tr td.c-last-month,.c-mytable tr td.c-next-month,
+.c-mytable tr td.c-last-ten-year,.c-mytable tr td.c-next-ten-year{color: #aaa;}
+.c-mytable tr td.c-show-day-bgc{background: #C61B01;color: #fff !important;border: 1px solid #C61B01;}
+.c-mytable tr td.c-chose-month{font-size: 14px;width:57px;}
+.c-mytable tr td.c-show-month-bgc,.c-mytable tr td.c-show-year-bgc{color: #C61B01 !important;}
+.c-mytable tr td:hover{border: 1px solid #C61B01;}
+
+
+
+
+
+
